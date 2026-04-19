@@ -2,10 +2,13 @@ import numpy as np
 import random
 
 def simulate_packet_loss(frames, loss_rate):
-    out = []
-    for f in frames:
+    output = []
+
+    for real, imag in frames:
         if random.random() < loss_rate:
-            out.append(np.zeros_like(f))
+            # mất gói → zero cả real + imag
+            output.append((np.zeros_like(real), np.zeros_like(imag)))
         else:
-            out.append(f)
-    return out
+            output.append((real, imag))
+
+    return output
