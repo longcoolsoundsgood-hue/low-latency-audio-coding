@@ -47,32 +47,49 @@ Audio → Frame segmentation → FFT → Quantization → Packet Loss Simulation
   - Significant degradation in audio quality
 
 ## Project Structure
+
 low-latency-audio-coding/
 │
-├── app.py
-├── requirements.txt
-│
-├── src/
-│ ├── encoder.py
-│ ├── decoder.py
-│ ├── network.py
-│ ├── metrics.py
-│ └── main.py
-│
-├── data/
-│ ├── input/
-│ └── output/
+└── low_latency_audio/
+    ├── app.py
+    ├── requirements.txt
+    │
+    ├── src/
+    │   ├── encoder.py
+    │   ├── decoder.py
+    │   ├── network.py
+    │   ├── metrics.py
+    │   └── main.py
+    │
+    └── data/
+        ├── input/
+        └── output/
 
 ## Installation
 
-Clone the repository:
+*1. Clone the repository:*
 git clone https://github.com/longcoolsoundsgood-hue/low-latency-audio-coding.git
-cd low-latency-audio-coding
+cd low-latency-audio-coding/low_latency_audio
 
-Install dependencies:
+⚠️ Make sure to `cd` into the `low_latency_audio/` subdirectory, as all code and data paths are relative to it.
+
+
+*2. Create and activate a virtual environment:*
+python3 -m venv venv
+source venv/bin/activate
+
+On Windows, use `venv\Scripts\activate` instead.
+
+
+*3. Install dependencies:*
 pip install -r requirements.txt
 
+*4. Deactivating the virtual environment (when done):*
+deactivate
+
 ## Run the Interactive Demo
+
+Make sure the virtual environment is activated, then run:
 streamlit run app.py
 
 Then open the browser at:
